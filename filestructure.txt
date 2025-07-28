@@ -41,6 +41,8 @@
             |-- ThreeCards.jsx
         |-- TwoBanner
             |-- DigitalTwobanner.jsx
+        |-- WeImpact
+            |-- WeMobileImpact.jsx
         |-- speedMeter
             |-- AISpeedometer.jsx
             |-- GigabitSpeedometer.jsx
