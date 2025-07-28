@@ -12,7 +12,7 @@ const ActionButtons = () => {
 
   return (
     <>
-      <div className={styles['actionButtons-iconBoxWrapper']}>
+      <div id='#recharge' className={styles['actionButtons-iconBoxWrapper']}>
         <div className={styles['actionButtons-iconBox']} onClick={() => setOpenModal1(true)}>
           <img 
             src="https://res.cloudinary.com/de6u5kbiw/image/upload/v1752582300/dexciss%20site/udemba/Purple_Abstract_Geometric_Mobile_Application_Logo-removebg-preview_xspdun.png" 

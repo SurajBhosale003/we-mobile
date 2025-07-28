@@ -53,7 +53,7 @@ function OurServices() {
   ];
 
   return (
-    <div className="w-[90%] mx-auto py-16">
+    <div className="w-[90%] max-w-[1000px] mx-auto py-16">
       <div className="text-center mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Connecting People, Homes, and Progress

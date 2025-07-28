@@ -3,8 +3,8 @@ import React from 'react';
 
 const DigitalTwobanner = () => {
   return (
-    <div className="w-[80%] mx-auto py-12 flex flex-col md:flex-row gap-6 justify-center items-stretch">
-      
+    <div className="w-[80%] max-w-[1000px] mx-auto py-12 flex flex-col md:flex-row gap-6 justify-center items-stretch">
+
       {/* Left Red Card */}
       <div className="bg-[#E30613] text-white rounded-[24px] flex flex-col justify-between p-0 md:w-1/2 w-full shadow-lg">
         
