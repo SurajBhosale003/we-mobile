@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/index.css */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+ .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #dc2626; }
+
+
+.footer-top {
+  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  font-size: 14px !important;
+  color: #1c1c1c !important;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+.footer-top h3 {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px;
+  color: #1c1c1c !important;
+}
+
+.footer-top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-top li {
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-top li:hover {
+  color: #ED1D26; /* your red theme */
+}
+
+.footer-top .social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-top .social-icons .icon {
+  background-color: #1c1c1c;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.footer-top .social-icons .icon svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+.footer-top .social-icons .icon:hover {
+  background-color: #ED1D26; /* on hover */
+}
+.wp-vas-btn {
+  background: #fff;
+  color: #ED1D26;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+  outline: none !important;
+  appearance: none; /* Avoid default styles on Safari/Chrome */
+  -webkit-tap-highlight-color: transparent; /* Fix for mobile tap highlight */
+}
+
+/* Prevent blue ring from appearing on focus or click */
+.wp-vas-btn:focus-visible,
+.wp-vas-btn:focus,
+.wp-vas-btn:active {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(237, 29, 38, 0.3) !important;
+  border-color: #ED1D26 !important;
+  background: #fff;
+  color: #ED1D26;
+}
+#closeModalBtn1:focus,
+#closeModalBtn1:active {
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Optional: Make icon color change only */
+#closeModalBtn1:hover i,
+#closeModalBtn1:focus i,
+#closeModalBtn1:active i {
+  color: #ED1D26 !important;
+}
+
+:root {
+    --ast-global-color-1: transparent !important;
+
+}
+.cards-hover-effect {
+	margin:2px;
+	border-radius:30px !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+  border-radius: 8px;
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+.cards-hover-effect:hover {
+  /* Your dramatic multi-layer shadow */
+  box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  
+  /* Enhanced hover effects */
+  transform: scale(1.02) translateY(-5px);
+  z-index: 10;
+}

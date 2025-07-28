@@ -1,0 +1,52 @@
+|-- .gitignore
+|-- README.md
+|-- eslint.config.js
+|-- index.html
+|-- package-lock.json
+|-- package.json
+|-- postcss.config.cjs
+|-- public
+    |-- vite.svg
+|-- src
+    |-- App.css
+    |-- App.jsx
+    |-- assets
+        |-- react.svg
+    |-- components
+        |-- Carousel
+            |-- Carousel.css
+            |-- Carousel.jsx
+        |-- Footer
+            |-- Footer.jsx
+        |-- Header
+            |-- Header.css
+            |-- Header.jsx
+        |-- IconBoxButtons
+            |-- ActionButton.module.css
+            |-- ActionButtons.jsx
+            |-- data
+                |-- plans.js
+            |-- dialogs
+                |-- CallDialog.jsx
+                |-- LocationDialog.jsx
+                |-- PlanDialog.jsx
+                |-- TailwindTest.jsx
+                |-- WeMobileBottomOverlay.jsx
+                |-- WeSatBottomOverlay.jsx
+        |-- NeedGuide
+            |-- NeedGuide.jsx
+        |-- OurServices
+            |-- OurServices.jsx
+        |-- ThreeCardsComponent
+            |-- ThreeCards.jsx
+        |-- TwoBanner
+            |-- DigitalTwobanner.jsx
+        |-- speedMeter
+            |-- AISpeedometer.jsx
+            |-- GigabitSpeedometer.jsx
+            |-- Speedometer.jsx
+    |-- index.css
+    |-- main.jsx
+|-- tailwind.config.js
+|-- tree
+|-- vite.config.js

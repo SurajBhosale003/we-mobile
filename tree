@@ -1,0 +1,29 @@
+/Users/suraj/personal/udemba/we-mobile/
+├── .gitignore
+├── README.md
+├── eslint.config.js
+├── filestructure.txt
+├── index.html
+├─] node_modules/ (ignored)
+├── package-lock.json
+├── package.json
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── Carousel/
+│   │   │   ├── Carousel.css
+│   │   │   └── Carousel.jsx
+│   │   ├── Header/
+│   │   │   ├── Header.css
+│   │   │   └── Header.jsx
+│   │   └── MainContent/
+│   │       ├── MainContent.css
+│   │       └── MainContent.jsx
+│   ├── index.css
+│   └── main.jsx
+└── vite.config.js

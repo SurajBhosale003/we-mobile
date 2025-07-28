@@ -1,0 +1,197 @@
+.actionButtons-iconBoxWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 200px;
+  justify-items: center;
+  padding: 0px 0;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+}
+
+.actionButtons-iconBox {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  background: transparent;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.actionButtons-iconBox span
+{
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.actionButtons-img1 {
+  width: 150px;
+  height: 150px;
+  fill: #ED1C24;
+  z-index: 2;
+  position: relative;
+  transition: fill 0.3s ease;
+}
+
+.actionButtons-img2 {
+  width: 150px;
+  height: 150px;
+  fill: #ED1C24;
+  z-index: 2;
+  position: relative;
+  transition: fill 0.3s ease;
+}
+
+.actionButtons-img3 {
+  width: 150px;
+  height: 150px;
+  fill: #ED1C24;
+  z-index: 2;
+  position: relative;
+  transition: fill 0.3s ease;
+}
+
+.actionButtons-iconBox p {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #010101;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Background hover animation */
+.actionButtons-iconBox::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(135, 135, 135, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition:
+    transform 0.4s ease,
+    border-radius 0.4s ease,
+    background-color 0.4s ease;
+  z-index: 0;
+}
+
+.actionButtons-iconBox:hover::before {
+  transform: translate(-50%, -50%) scale(2);
+  border-radius: 18px;
+  background-color: #ffece9;
+}
+
+/* Subscribe module */
+/* Plan Container Styles */
+.planContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+/* Plan Card Styles */
+.planCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.planHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.planTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.planPrice {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ED1D26;
+}
+
+.planFeatures {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.planFeatures li {
+  padding: 8px 0;
+  font-size: 15px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.checkIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #ED1D26;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.planNote {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.planNote:before {
+  content: "Note :";
+  color: #555;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.planButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #ED1D26;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.planButton:hover {
+  background-color: #d01820;
+}

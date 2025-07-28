@@ -1,0 +1,60 @@
+/* src/components/Header/Header.css */
+header {
+  margin-top: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  height: 52px;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 1.25rem;
+  margin-top: 10px;
+}
+.logo img {
+  height: 88px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.9rem;
+  margin: 0 auto;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  padding: .25rem 0;
+  font-size: 12px;
+  transition: color .25s ease;
+}
+.nav-link:visited { color: #000; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background-color: #ED1D26;
+  transition: width .3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
