@@ -1,4 +1,3 @@
-// src/App.jsx
 import Header from './components/Header/Header';
 import Carousel from './components/Carousel/Carousel';
 import Speedometer from './components/speedMeter/Speedometer';
@@ -17,8 +16,18 @@ function App() {
   return (
     <div className="App bg-white">
       <Header />
-      <Carousel />
-      <ActionButtons />
+
+      {/* Home Section */}
+      <section id="home">
+        <Carousel />
+      </section>
+
+      {/* Recharge Section */}
+      <section id="recharge">
+        <ActionButtons />
+      </section>
+
+      {/* Optional: other components between recharge and services */}
       <div className="speedometers-container">
         <div className="speedometer-card">
           <Speedometer />
@@ -30,12 +39,22 @@ function App() {
           <AISpeedometer />
         </div>
       </div>
+
       <DigitalTwobanner />
-      <OurServices />
+
+      {/* Services Section */}
+      <section id="services">
+        <OurServices />
+      </section>
+
       <ThreeCards />
       <WeMobileImpact />
-      <NeedGuide />
-      <Footer />
+
+      {/* Contact Us Section */}
+      <section id="contactus">
+        <NeedGuide />
+        <Footer />
+      </section>
     </div>
   );
 }

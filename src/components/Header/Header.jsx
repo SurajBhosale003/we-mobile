@@ -1,4 +1,3 @@
-// src/components/Header/Header.jsx
 import React, { useEffect } from 'react';
 import './Header.css';
 
@@ -18,6 +17,7 @@ const Header = () => {
         window.scrollTo(0, startY + distance * ease);
         if (elapsed < duration) requestAnimationFrame(step);
       }
+
       requestAnimationFrame(step);
     };
 
@@ -27,7 +27,7 @@ const Header = () => {
       const targetEl = document.getElementById(targetId);
       if (!targetEl) return;
 
-      const headerOffset = 52; // --nav-height value
+      const headerOffset = 52;
       const targetY = targetEl.getBoundingClientRect().top + window.scrollY - headerOffset;
       scrollToTarget(targetY);
     };
@@ -35,7 +35,34 @@ const Header = () => {
     const links = document.querySelectorAll('.nav-link');
     links.forEach(link => link.addEventListener('click', handleLinkClick));
 
-    return () => links.forEach(link => link.removeEventListener('click', handleLinkClick));
+    // Auto active class on scroll (IntersectionObserver)
+    const sections = document.querySelectorAll('section[id]');
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5, // section must be at least 50% in view
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.nav-link').forEach(link =>
+            link.classList.remove('active')
+          );
+          if (navLink) navLink.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    return () => {
+      links.forEach(link => link.removeEventListener('click', handleLinkClick));
+      sections.forEach(section => observer.unobserve(section));
+    };
   }, []);
 
   return (
@@ -50,7 +77,7 @@ const Header = () => {
 
         <nav>
           <div className="nav-links">
-            <a href="#home" className="nav-link active">Home</a>
+            <a href="#home" className="nav-link">Home</a>
             <a href="#recharge" className="nav-link">Recharge</a>
             <a href="#services" className="nav-link">Services</a>
             <a href="#contactus" className="nav-link">Contact Us</a>
