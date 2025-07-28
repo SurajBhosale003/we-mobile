@@ -20,8 +20,11 @@ const CardText = styled(CardContent)(({ theme }) => ({
   backgroundColor: '#ED1C24',
   color: 'white',
   padding: '20px',
-  textAlign: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100%',
 }));
+
 
 const cardData = [
   {
@@ -94,11 +97,10 @@ function ThreeCards() {
               <Typography variant="body2" component="p">
                 {card.description}
               </Typography>
-
-                <button className='bg-white py-1 px-2 mt-3 rounded-md text-[10px] text-[#EE1C25]'>
-                More ...
+                <button className='bg-white py-1 px-2 mt-3 self-start rounded-md text-[12px] text-[#EE1C25]'>
+                  More ...
                 </button>
-              
+
             </CardText>
           </StyledCard>
         </motion.div>
