@@ -117,25 +117,24 @@ function OurServices() {
                     </svg>
                   </motion.span>
                 </button>
+{expandedService === index && (
+  <motion.div
+    initial={{ height: 0, opacity: 0 }}
+    animate={{ height: 'auto', opacity: 1 }}
+    exit={{ height: 0, opacity: 0 }}
+    transition={{ duration: 0.5 }}
+    className="overflow-hidden bg-gray-50 px-5 py-4 text-sm text-gray-700"
+  >
+    <h3 className="font-semibold mb-1">{service.subtitle}</h3>
+    <p className="mb-2">{service.description}</p>
+    <ul className="list-disc pl-6 space-y-1">
+      {service.bullets.map((bullet, i) => (
+        <li key={i}>{bullet}</li>
+      ))}
+    </ul>
+  </motion.div>
+)}
 
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={expandedService === index ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="overflow-hidden bg-gray-50 px-5 py-4 text-sm text-gray-700"
-                >
-                
-               
-                      <h3 className="font-semibold mb-1">{service.subtitle}</h3>
-                      <p className="mb-2">{service.description}</p>
-                      <ul className="list-disc pl-6 space-y-1">
-                        {service.bullets.map((bullet, i) => (
-                          <li key={i}>{bullet}</li>
-                        ))}
-                      </ul>
-                 
-         
-                </motion.div>
               </div>
             ))}
           </div>

@@ -27,7 +27,7 @@ const LocationDialog = ({ open, onClose }) => {
     {
       id: 2,
       name: "Lekki Phase 1, Lagos",
-      active: true,
+      active: false,
       image: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1753422784/dexciss%20site/udemba/location/Night-view-of-lekki-link-bridge_dxis0y.jpg",
     },
     {
@@ -112,7 +112,11 @@ const LocationDialog = ({ open, onClose }) => {
                     <div className={`border-2 rounded-lg p-4 transition-all duration-200 ${item.active ? "border-gray-800 bg-gray-50" : "border-gray-300 bg-white"}`}>
                       <div className="text-center">
                         <div className="h-24 bg-gray-100 rounded mb-3 overflow-hidden flex justify-center items-center">
-                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className={`w-full h-full object-cover transition-all duration-300 ${!item.active ? 'grayscale' : ''}`}
+                          />
                         </div>
                         <div className={`text-sm font-medium ${item.active ? "text-gray-800" : "text-gray-400"}`}>
                           {item.name}

@@ -68,7 +68,7 @@ const ContactDialog = ({ open, onClose }) => {
         {/* Contact Information Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* Contact Card */}
-          <div className="bg-orange-200 rounded-2xl p-8 flex items-center space-x-6">
+          <div className="bg-red-100 rounded-2xl p-8 flex items-center space-x-6">
             <div className="text-red-500 text-3xl">
               <i className="fas fa-phone"></i>
             </div>
@@ -83,7 +83,7 @@ const ContactDialog = ({ open, onClose }) => {
           </div>
 
           {/* Email Card */}
-          <div className="bg-orange-200 rounded-2xl p-8 flex items-center space-x-6">
+          <div className="bg-red-100 rounded-2xl p-8 flex items-center space-x-6">
             <div className="text-red-500 text-3xl">
               <i className="fas fa-envelope"></i>
             </div>

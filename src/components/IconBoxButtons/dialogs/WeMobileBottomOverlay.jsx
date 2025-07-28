@@ -71,25 +71,29 @@ const WeMobileBottomOverlay = ({ open, onClose }) => {
   }, [open]);
 
   return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      fullScreen
-      PaperProps={{
-        style: {
-          marginTop: 'auto',
-          height: '90vh',
-          borderTopLeftRadius: '20px',
-          borderTopRightRadius: '20px',
-          background: '#f5f5f5',
-          transition: 'transform 0.3s ease-out',
-          transform: open ? 'translateY(0%)' : 'translateY(100%)',
-          padding: '20px',
-          boxSizing: 'border-box',
-          overflow: 'auto',
-        }
-      }}
-    >
+<Dialog
+  open={open}
+  onClose={onClose}
+  maxWidth="md"
+  fullWidth
+  PaperProps={{
+    style: {
+      borderRadius: '20px',
+      background: '#f5f5f5',
+      padding: '20px',
+      boxSizing: 'border-box',
+      maxHeight: '90vh',
+      minWidth: '70vw',
+      overflowY: 'auto'
+    }
+  }}
+  BackdropProps={{
+    style: {
+      backgroundColor: 'rgba(0, 0, 0, 0.5)' // proper gray overlay
+    }
+  }}
+>
+
       <div style={{ position: 'relative' }}>
         <IconButton
           onClick={onClose}
@@ -101,7 +105,7 @@ const WeMobileBottomOverlay = ({ open, onClose }) => {
         <h1 style={{
           textAlign: 'center',
           marginBottom: '24px',
-          fontSize: '22px',
+          fontSize: '24px',
           fontWeight: 'bold',
           color: '#333'
         }}>
