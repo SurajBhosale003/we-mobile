@@ -69,7 +69,7 @@ const WeSatBottomOverlay = ({ open, onClose }) => {
   }, [open]);
 
   return (
- <Dialog
+<Dialog
   open={open}
   onClose={onClose}
   maxWidth="md"
@@ -82,74 +82,98 @@ const WeSatBottomOverlay = ({ open, onClose }) => {
       boxSizing: 'border-box',
       maxHeight: '90vh',
       minWidth: '70vw',
-      overflowY: 'auto'
+      display: 'flex',
+      flexDirection: 'column',
     }
   }}
   BackdropProps={{
     style: {
-      backgroundColor: 'rgba(0, 0, 0, 0.5)' // proper gray overlay
+      backgroundColor: 'rgba(0, 0, 0, 0.5)'
     }
   }}
 >
-      <div style={{ position: 'relative' }}>
-        <IconButton
-          onClick={onClose}
-          style={{ position: 'absolute', top: 0, right: 0, zIndex: 1 }}
-        >
-          <CloseIcon />
-        </IconButton>
+      <IconButton
+      onClick={onClose}
+      style={{ position: 'absolute', top: 15, right: 15, zIndex: 1 }}
+    >
+      <CloseIcon />
+    </IconButton>
 
-        <h1 style={{
-          textAlign: 'center',
-          marginBottom: '24px',
-          fontSize: '24px',
-          fontWeight: 'bold',
-          color: '#333'
-        }}>
-          WESAT DATA BUNDLE
-        </h1>
-        <div style={{
-          marginLeft: '5%',
-          marginRight: '5%',
-        }}>
-          {/* Broadband Bundles */}
-          <div style={{
-            background: 'white',
-            padding: '16px',
-            borderRadius: '8px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
-          }}>
-            <TableContainer component={Paper} elevation={0} style={{ border: '1px solid #ddd' }}>
-              <Table>
-                <TableHead>
-                  <TableRow style={{ background: '#f7f7f7' }}>
-                    {['PLAN NAME',  'SPEED','DATA', 'PRICE', 'NOTES', ''].map(header => (
-                      <TableCell key={header} style={{ fontWeight: 'bold', fontSize: '13px' }}>
-                        {header}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {weSat.plans.map((plan, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{plan.name}</TableCell>
-                      <TableCell>{plan.speed}</TableCell>
-                      <TableCell>{plan.data}</TableCell>
-                      <TableCell>{plan.price}</TableCell>
-                      <TableCell>{plan.notes}</TableCell>
-                      <TableCell>
-                        <BuyButton text={plan.cta} />
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </div>
-        </div>
+    {/* Title */}
+    <h1 style={{
+      textAlign: 'center',
+      marginBottom: '20px',
+      marginTop: '20px',
+      fontSize: '24px',
+      fontWeight: 'bold',
+      color: '#333'
+    }}>
+      WESAT DATA BUNDLE
+    </h1>
+    <div
+    style={{
+      maxHeight: '90vh',
+      overflowY: 'auto',
+      padding: '20px',
+      borderRadius: '20px',
+      boxSizing: 'border-box'
+    }}
+    className="custom-scrollbar"
+  >
+  <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', height: '100%' }}>
+    {/* Close Button */}
+
+
+    {/* ✅ SCROLLABLE CONTENT ONLY */}
+    <div
+      style={{
+        overflowY: 'auto',
+        flex: 1,
+        padding: '0 5%',
+        minHeight: 0, // Required for flexbox to allow scroll
+      }}
+      className="custom-scrollbar"
+    >
+      <div style={{
+        background: 'white',
+        padding: '16px',
+        borderRadius: '8px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+      }}>
+        <TableContainer component={Paper} elevation={0} style={{ border: '1px solid #ddd' }}>
+          <Table>
+            <TableHead>
+              <TableRow style={{ background: '#f7f7f7' }}>
+                {['PLAN NAME', 'SPEED', 'DATA', 'PRICE', 'NOTES', ''].map(header => (
+                  <TableCell key={header} style={{ fontWeight: 'bold', fontSize: '13px' }}>
+                    {header}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {weSat.plans.map((plan, index) => (
+                <TableRow key={index}>
+                  <TableCell>{plan.name}</TableCell>
+                  <TableCell>{plan.speed}</TableCell>
+                  <TableCell>{plan.data}</TableCell>
+                  <TableCell>{plan.price}</TableCell>
+                  <TableCell>{plan.notes}</TableCell>
+                  <TableCell>
+                    <BuyButton text={plan.cta} />
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </div>
-    </Dialog>
+    </div>
+  </div>
+  </div>
+</Dialog>
+
+
   );
 };
 

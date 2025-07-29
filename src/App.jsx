@@ -16,7 +16,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App bg-white">
+    <div className="App bg-white custom-scrollbar">
       <Header />
 
       {/* Home Section */}

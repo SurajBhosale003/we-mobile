@@ -80,42 +80,51 @@ const WeMobileBottomOverlay = ({ open, onClose }) => {
     style: {
       borderRadius: '20px',
       background: '#f5f5f5',
-      padding: '20px',
+      padding: '0', // Remove padding from Paper
       boxSizing: 'border-box',
       maxHeight: '90vh',
       minWidth: '70vw',
-      overflowY: 'auto'
     }
   }}
   BackdropProps={{
     style: {
-      backgroundColor: 'rgba(0, 0, 0, 0.5)' // proper gray overlay
+      backgroundColor: 'rgba(0, 0, 0, 0.5)'
     }
   }}
 >
-
-      <div style={{ position: 'relative' }}>
+  {/* 🔁 SCROLLABLE CONTENT WRAPPER */}
         <IconButton
-          onClick={onClose}
-          style={{ position: 'absolute', top: 0, right: 0, zIndex: 1 }}
-        >
-          <CloseIcon />
-        </IconButton>
+        onClick={onClose}
+        style={{ position: 'absolute', top: 15, right: 15, zIndex: 1 }}
+      >
+        <CloseIcon />
+      </IconButton>
 
-        <h1 style={{
-          textAlign: 'center',
-          marginBottom: '24px',
-          fontSize: '24px',
-          fontWeight: 'bold',
-          color: '#333'
-        }}>
-          WEMOBILE DATA BUNDLE
-        </h1>
-    <div style={{
-      marginLeft: '5%',
-      marginRight: '5%',
-    }}>
-        {/* Daily/Weekly/Monthly Plans */}
+      <h1 style={{
+        textAlign: 'center',
+        marginBottom: '20px',
+        marginTop: '20px',
+        fontSize: '24px',
+        fontWeight: 'bold',
+        color: '#333'
+      }}>
+        WEMOBILE DATA BUNDLE
+      </h1>
+  <div
+    style={{
+      maxHeight: '90vh',
+      overflowY: 'auto',
+      padding: '20px',
+      borderRadius: '20px',
+      boxSizing: 'border-box'
+    }}
+    className="custom-scrollbar"
+  >
+    <div style={{ position: 'relative' }}>
+
+
+      <div style={{ marginLeft: '5%', marginRight: '5%' }}>
+        {/* Plan Cards */}
         <div style={{
           display: 'flex',
           gap: '12px',
@@ -173,9 +182,11 @@ const WeMobileBottomOverlay = ({ open, onClose }) => {
             </Table>
           </TableContainer>
         </div>
-    </div>
       </div>
-    </Dialog>
+    </div>
+  </div>
+</Dialog>
+
   );
 };
 
