@@ -42,6 +42,9 @@
             |-- ThreeCards.jsx
         |-- TwoBanner
             |-- DigitalTwobanner.jsx
+        |-- ValueAddedService
+            |-- ValueAddedServices.css
+            |-- ValueAddedServices.jsx
         |-- WeImpact
             |-- WeMobileImpact.jsx
         |-- speedMeter

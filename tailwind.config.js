@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,jsx}", // This will scan all .js and .jsx files in src/
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

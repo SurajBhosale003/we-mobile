@@ -8,8 +8,10 @@ import DigitalTwobanner from './components/TwoBanner/DigitalTwobanner';
 import OurServices from './components/OurServices/OurServices';
 import ThreeCards from './components/ThreeCardsComponent/ThreeCards';
 import WeMobileImpact from './components/WeImpact/WeMobileImpact';
+import ValueAddedServices from './components/ValueAddedService/ValueAddedServices';
 import NeedGuide from './components/NeedGuide/NeedGuide';
 import Footer from './components/Footer/Footer';
+
 import './App.css';
 
 function App() {
@@ -49,6 +51,11 @@ function App() {
 
       <ThreeCards />
       <WeMobileImpact />
+
+      {/* Value Added Services Section */}
+      <section id="value-added-services">
+        <ValueAddedServices />
+      </section>
 
       {/* Contact Us Section */}
       <section id="contactus">
