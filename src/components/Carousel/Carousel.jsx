@@ -8,9 +8,9 @@ const Carousel = () => {
   const intervalRef = useRef(null);
 
   const slides = [
-    { id: 1, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1751955041/dexciss%20site/udemba/10_oa0gml.png", alt: "Slide 1" },
-    { id: 2, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1751955037/dexciss%20site/udemba/8_plqtbb.png", alt: "Slide 2" },
-    { id: 3, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1751955034/dexciss%20site/udemba/6_ixutjw.png", alt: "Slide 3" }
+    { id: 1, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1753790355/dexciss%20site/udemba/Always_Connected_Always_Human_7_1_zszrbk.png", alt: "Slide 1" },
+    { id: 2, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1753789897/dexciss%20site/udemba/Always_Connected_Always_Human_6_1_j7rlfr.png", alt: "Slide 2" },
+    { id: 3, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1753790273/dexciss%20site/udemba/Always_Connected_Always_Human_5_cuqpa4.png", alt: "Slide 3" }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 due to leading clone
