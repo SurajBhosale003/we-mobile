@@ -3,8 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Carousel.css';
 
 const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const trackRef = useRef(null);
   const slideWidthRef = useRef(0);
   const intervalRef = useRef(null);
@@ -15,14 +13,24 @@ const Carousel = () => {
     { id: 3, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1751955034/dexciss%20site/udemba/6_ixutjw.png", alt: "Slide 3" }
   ];
 
-  const setSlideWidth = () => {
-    if (trackRef.current?.firstChild) {
-      slideWidthRef.current = trackRef.current.firstChild.offsetWidth + 30; // 30px gap
+  const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 due to leading clone
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const extendedSlides = [
+    slides[slides.length - 1], // Clone of last at the start
+    ...slides,
+    slides[0], // Clone of first at the end
+  ];
+
+  const updateSlideWidth = () => {
+    if (trackRef.current?.children[0]) {
+      const slide = trackRef.current.children[0];
+      slideWidthRef.current = slide.offsetWidth + 30;
     }
   };
 
-  const showSlide = (index) => {
-    if (isTransitioning || !trackRef.current) return;
+  const moveToSlide = (index) => {
+    if (!trackRef.current) return;
     setIsTransitioning(true);
     trackRef.current.style.transition = 'transform 0.6s ease';
     trackRef.current.style.transform = `translateX(-${slideWidthRef.current * index}px)`;
@@ -31,76 +39,64 @@ const Carousel = () => {
 
   const handleTransitionEnd = () => {
     if (!trackRef.current) return;
-    
-    if (currentIndex === slides.length + 1) {
-      trackRef.current.style.transition = 'none';
-      trackRef.current.style.transform = `translateX(-${slideWidthRef.current * 1}px)`;
-      setCurrentIndex(1);
-    } else if (currentIndex === 0) {
+
+    if (currentIndex === 0) {
+      // Jump to real last slide
       trackRef.current.style.transition = 'none';
       trackRef.current.style.transform = `translateX(-${slideWidthRef.current * slides.length}px)`;
       setCurrentIndex(slides.length);
+    } else if (currentIndex === slides.length + 1) {
+      // Jump to real first slide
+      trackRef.current.style.transition = 'none';
+      trackRef.current.style.transform = `translateX(-${slideWidthRef.current}px)`;
+      setCurrentIndex(1);
     }
     setIsTransitioning(false);
   };
 
   useEffect(() => {
-    setSlideWidth();
-    showSlide(1);
-    intervalRef.current = setInterval(() => showSlide(currentIndex + 1), 4000);
+    updateSlideWidth();
+    window.addEventListener('resize', updateSlideWidth);
+    return () => window.removeEventListener('resize', updateSlideWidth);
+  }, []);
 
-    const handleResize = () => {
-      setSlideWidth();
-      trackRef.current.style.transition = 'none';
-      trackRef.current.style.transform = `translateX(-${slideWidthRef.current * currentIndex}px)`;
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      clearInterval(intervalRef.current);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [currentIndex]);
+  useEffect(() => {
+    updateSlideWidth();
+    moveToSlide(1); // Start at the first real slide
+  }, []);
 
   useEffect(() => {
     const track = trackRef.current;
     track?.addEventListener('transitionend', handleTransitionEnd);
-    return () => track?.removeEventListener('transitionend', handleTransitionEnd);
-  }, [currentIndex]);
+
+    intervalRef.current = setInterval(() => {
+      if (!isTransitioning) moveToSlide(currentIndex + 1);
+    }, 4000);
+
+    return () => {
+      track?.removeEventListener('transitionend', handleTransitionEnd);
+      clearInterval(intervalRef.current);
+    };
+  }, [currentIndex, isTransitioning]);
 
   return (
     <div className="carousel-container">
       <div className="carousel-track" ref={trackRef}>
-        {/* Clone of last slide */}
-        <div className="carousel-slide clone" aria-hidden="true">
-          <img src={slides[slides.length-1].src} alt={`${slides[slides.length-1].alt} Clone`} />
-        </div>
-
-        {/* Real slides */}
-        {slides.map(slide => (
-          <div key={slide.id} className="carousel-slide">
-            <img src={slide.src} alt={slide.alt} />
+        {extendedSlides.map((slide, index) => (
+          <div key={index} className="carousel-slide" aria-hidden={(index === 0 || index === extendedSlides.length - 1) ? "true" : "false"}>
+            <img src={slide.src} alt={slide.alt + ` ${index}`} />
           </div>
         ))}
-
-        {/* Clones of first slide */}
-        <div className="carousel-slide clone" aria-hidden="true">
-          <img src={slides[0].src} alt={`${slides[0].alt} Clone`} />
-        </div>
-        <div className="carousel-slide clone" aria-hidden="true">
-          <img src={slides[0].src} alt={`${slides[0].alt} Clone`} />
-        </div>
       </div>
 
       <div className="carousel-dots">
         {slides.map((_, i) => (
-          <span 
+          <span
             key={i}
-            className={`dot ${currentIndex % slides.length === i ? 'active' : ''}`}
+            className={`dot ${currentIndex === i + 1 ? 'active' : ''}`}
             onClick={() => {
               clearInterval(intervalRef.current);
-              showSlide(i + 1);
-              intervalRef.current = setInterval(() => showSlide(currentIndex + 1), 4000);
+              moveToSlide(i + 1);
             }}
           />
         ))}

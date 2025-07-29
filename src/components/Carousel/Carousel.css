@@ -1,4 +1,10 @@
 /* src/components/Carousel/Carousel.css */
+:root{
+  --slide-w: 85%;    /* desktop slide width  */
+  --gap: 30px;       /* MUST match .carousel-track gap */
+}
+
+/* container */
 .carousel-container {
   position: relative;
   overflow: hidden;
@@ -6,48 +12,48 @@
   padding: 20px 0;
 }
 
-.carousel-track {
-  display: flex;
-  gap: 30px;
-  transition: transform 0.6s ease;
-  padding-left: calc((100% - 85%)/1.18 - 15px);
+/* track */
+.carousel-track{
+  display:flex;
+  gap:var(--gap);
+  transition:transform .6s ease;
+  /* centre offset: (100 % − w)/2 − gap/2 */
+  padding-left:calc((100% - var(--slide-w))/1.18 - var(--gap)/2);
 }
 
-.carousel-slide {
-  flex: 0 0 85%;
-  height: 60vh;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,.1);
+/* slides */
+.carousel-slide{
+  flex:0 0 var(--slide-w);
+  height:60vh;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.1);
 }
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.carousel-slide img{
+  width:100%; height:100%; object-fit:cover;
 }
 
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-  gap: 10px;
+/* dots */
+.carousel-dots{
+  display:flex;
+  justify-content:center;
+  margin-top:12px;
+  gap:10px;
 }
-.dot {
-  width: 10px;
-  height: 10px;
-  background: #ccc;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s;
+.dot{
+  width:10px; height:10px;
+  background:#ccc;
+  border-radius:50%;
+  cursor:pointer;
+  transition:background .3s;
 }
-.dot.active { background: #e41c1c; }
+.dot.active{ background:#e41c1c; }
 
-@media (max-width: 768px) {
-  .carousel-track {
-    padding-left: calc((100% - 90%)/2 - 15px);
-  }
-  .carousel-slide {
-    flex: 0 0 90%;
-    height: 30vh;
+/* mobile breakpoint */
+@media(max-width:768px){
+  :root{ --slide-w: 90%; }           /* wider slide on narrow screens */
+  .carousel-slide{ height:30vh; }
+  .carousel-track{
+    padding-left:calc((100% - var(--slide-w))/2 - var(--gap)/2);
   }
 }
