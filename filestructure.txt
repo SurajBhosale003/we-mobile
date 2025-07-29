@@ -45,6 +45,11 @@
         |-- ValueAddedService
             |-- ValueAddedServices.css
             |-- ValueAddedServices.jsx
+            |-- dialogs
+                |-- ELearningDialog.jsx
+                |-- QuadplayDialog.jsx
+                |-- TechnopreneurDialog.jsx
+                |-- WeSatDialog.jsx
         |-- WeImpact
             |-- WeMobileImpact.jsx
         |-- speedMeter

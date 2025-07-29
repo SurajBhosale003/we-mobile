@@ -1,41 +1,57 @@
 // src/components/ValueAddedServices.tsx
 import React, { useState, useEffect } from 'react';
 import './ValueAddedServices.css';
+import QuadplayDialog from './dialogs/QuadplayDialog';
+import TechnopreneurDialog from './dialogs/TechnopreneurDialog';
+import ELearningDialog from './dialogs/ELearningDialog';
+import WeSatDialog from './dialogs/WeSatDialog';
 
 const services = [
   {
     id: 1,
     title: 'Quadplay',
     description: 'Welcome to our quad play-your all-in-one digital powerhouse, seamlessly integrating the future of media, connectivity, and communication.',
-    img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1751950673/dexciss%20site/udemba/icons8-internet-64_1_pzakfz.png',
+    img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1753785481/dexciss%20site/udemba/quadplay_spigqm.svg',
+    dialogComponent: 'quadplay'
   },
   {
     id: 2,
     title: 'Technopreneur',
     description: 'Register to be part of our business empowering strategy and become financial free',
-    img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1751950886/dexciss%20site/udemba/icons8-5g-48_axm1z2.png',
+    img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1753785497/dexciss%20site/udemba/technopreneur_lpmeox.svg',
+    dialogComponent: 'technopreneur'
   },
   {
     id: 3,
     title: 'E-learning',
     description: 'Register to be part of our business empowering strategy and become financial free',
-    img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1751951223/dexciss%20site/udemba/icons8-machine-learning-50_pizbec.png',
+    img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1753785486/dexciss%20site/udemba/elearning_yogn08.svg',
+    dialogComponent: 'e-learning'
   },
   {
     id: 4,
-    title: 'Wellness',
+    title: 'WeSat',
     description: 'Sustain physical, mental, and emotional well-being with digital health tools and expert support.',
-    img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1751951317/dexciss%20site/udemba/icons8-doctors-bag-50_zntn3y.png',
+    img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1753785493/dexciss%20site/udemba/wesat_cpwf4n.svg',
+    dialogComponent: 'we-sat'
   },
 ];
 
 const ValueAddedServices = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transition, setTransition] = useState(true);
+  const [activeDialog, setActiveDialog] = useState(null);
   const cardsToShow = 3;
 
   // Clone items for infinite loop
   const extendedServices = [...services, ...services, ...services];
+  const handleCardClick = (dialogComponent) => {
+    setActiveDialog(dialogComponent);
+  };
+
+  const closeDialog = () => {
+    setActiveDialog(null);
+  };
 
   const next = () => {
     setTransition(true);
@@ -45,7 +61,7 @@ const ValueAddedServices = () => {
         setTimeout(() => {
           setTransition(false);
           setCurrentIndex(0);
-        }, 500);
+        }, 1500);
       }
       return newIndex;
     });
@@ -58,7 +74,7 @@ const ValueAddedServices = () => {
         setTimeout(() => {
           setTransition(false);
           setCurrentIndex(services.length - 1);
-        }, 500);
+        }, 1500);
         return -1;
       }
       return prev - 1;
@@ -66,14 +82,10 @@ const ValueAddedServices = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(next, 4000);
+    const interval = setInterval(next, 8000);
     return () => clearInterval(interval);
   }, []);
 
-  const handleCardClick = (id) => {
-    console.log(`Card with ID ${id} clicked`);
-    // Add your custom logic here for what happens when a card is clicked
-  };
 
   const getVisibleCards = () => {
     let startIndex = currentIndex;
@@ -119,12 +131,17 @@ const ValueAddedServices = () => {
                 <p>{card.description}</p>
                 <button 
                   className="get-started" 
-                  onClick={() => handleCardClick(card.id)}
+                  onClick={() => handleCardClick(card.dialogComponent)}
                 >
                   Get Started
                 </button>
               </div>
             ))}
+
+              {activeDialog === 'quadplay' && <QuadplayDialog open={true} onClose={closeDialog} />}
+              {activeDialog === 'technopreneur' && <TechnopreneurDialog open={true} onClose={closeDialog} />}
+              {activeDialog === 'e-learning' && <ELearningDialog open={true} onClose={closeDialog} />}
+              {activeDialog === 'we-sat' && <WeSatDialog open={true} onClose={closeDialog} />}
           </div>
         </div>
 
