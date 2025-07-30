@@ -6,6 +6,7 @@ import {
   IconButton
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { FaPhoneAlt, FaRegEnvelope } from 'react-icons/fa';
 
 const ContactDialog = ({ open, onClose }) => {
   const [formData, setFormData] = useState({
@@ -68,28 +69,38 @@ const ContactDialog = ({ open, onClose }) => {
         {/* Contact Information Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* Contact Card */}
-          <div className="bg-red-100 rounded-2xl p-8 flex items-center space-x-6">
-            <div className="text-red-500 text-3xl">
-              <i className="fas fa-phone"></i>
+          <div className="bg-[#ffd8c7] rounded-none px-6 py-4 flex items-center space-x-4">
+            {/* Icon and Label */}
+            <div className="flex flex-col items-center text-red-600">
+              <FaPhoneAlt className="text-3xl mb-1" />
+              <span className="text-sm font-medium">Contact</span>
             </div>
-            <div>
-              <h3 className="text-red-500 font-semibold text-lg mb-2">Contact</h3>
-              <div className="text-gray-800 space-y-1">
-                <p>+234 803 324 2821</p>
-                <p>+234 803 324 2821</p>
-                <p>+234 803 324 2821</p>
-              </div>
+
+            {/* Divider */}
+            <div className="h-[80%] w-[2px] bg-black mx-4"></div>
+
+            {/* Numbers */}
+            <div className="text-black space-y-1 text-sm md:text-base">
+              <p>+234 803 324 2821</p>
+              <p>+234 803 324 2821</p>
+              <p>+234 803 324 2821</p>
             </div>
           </div>
 
           {/* Email Card */}
-          <div className="bg-red-100 rounded-2xl p-8 flex items-center space-x-6">
-            <div className="text-red-500 text-3xl">
-              <i className="fas fa-envelope"></i>
+          <div className="bg-[#ffd8c7] rounded-none px-6 py-4 flex items-center space-x-4">
+            {/* Icon and Label */}
+            <div className="flex flex-col items-center text-red-600">
+              <FaRegEnvelope className="text-3xl mb-1" />
+              <span className="text-sm font-medium">Email</span>
             </div>
-            <div>
-              <h3 className="text-red-500 font-semibold text-lg mb-2">Email</h3>
-              <p className="text-gray-800">info@ludgroup.com</p>
+
+            {/* Divider */}
+            <div className="h-[80%] w-[2px] bg-black mx-4"></div>
+
+            {/* Email Text */}
+            <div className="text-black text-sm md:text-base">
+              <p>Info@tuggroup.com</p>
             </div>
           </div>
         </div>
@@ -107,7 +118,7 @@ const ContactDialog = ({ open, onClose }) => {
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                placeholder="Name"
+                placeholder="Adeola Bello"
                 className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm"
               />
             </div>
@@ -122,7 +133,7 @@ const ContactDialog = ({ open, onClose }) => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                placeholder="Email"
+                placeholder="adeola.bello@gmail.com"
                 className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm"
               />
             </div>
@@ -137,7 +148,7 @@ const ContactDialog = ({ open, onClose }) => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                placeholder="Phone"
+                placeholder="0701 987 6543"
                 className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm"
               />
             </div>
@@ -151,7 +162,7 @@ const ContactDialog = ({ open, onClose }) => {
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
-                placeholder="Message"
+                placeholder="If you have any questions, please include them here."
                 rows={5}
                 className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none text-sm"
               />

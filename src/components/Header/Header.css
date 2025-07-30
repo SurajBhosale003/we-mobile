@@ -1,15 +1,15 @@
 /* Header.css */
 
 header {
-  margin-top: 20px;
+  margin-top: 0; /* Removed top margin to make it truly sticky at top */
   position: sticky;
   top: 0;
   z-index: 1000;
   background: #fff;
   height: 52px;
-
 }
 
+/* Inner container */
 .nav-inner {
   max-width: 1200px;
   height: 100%;
@@ -21,6 +21,7 @@ header {
   position: relative;
 }
 
+/* Logo */
 .logo {
   position: absolute;
   left: 1.25rem;
@@ -51,7 +52,7 @@ header {
   font-size: 10px;
   letter-spacing: 0.3px;
   transition: color 0.3s ease;
-  text-transform: uppercase;
+  text-transform: capitalize; /* ✅ Only first letter will be capitalized */
 }
 
 .nav-link:visited {
@@ -82,7 +83,7 @@ header {
   color: #ED1D26;
 }
 
-/* Optional: Better spacing on small screens */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .nav-links {
     gap: 1.5rem;

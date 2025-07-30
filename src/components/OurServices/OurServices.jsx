@@ -29,25 +29,25 @@ function OurServices() {
     {
       id: 2,
       title: 'Household Services',
-      subtitle: 'Stay online, stay connected.',
+      subtitle: 'Turn your home into a connected space.',
       description:
-        'Make calls, stream content, and browse without breaks — with strong network coverage and ARRA-powered WiFi.',
+        'Enjoy seamless entertainment, steady internet, and home voice access — all in one plan.',
       bullets: [
-        'Unlimited voice calling',
-        'Mobile data via ARRA WiFi',
-        'TrendPlay OTT access on mobile'
+        'IPTV (DSO, TrendPlay, Whale TV, 3rd-party apps)',
+        'Home phone service',
+        'Reliable in-home WiFi'
       ]
     },
     {
       id: 3,
       title: 'Enterprise Services',
-      subtitle: 'Stay online, stay connected.',
+      subtitle: 'Built for creators and small businesses.',
       description:
-        'Make calls, stream content, and browse without breaks — with strong network coverage and ARRA-powered WiFi.',
+        'From content distribution to digital platforms, WE-Mobile helps entrepreneurs grow and reach more people.',
       bullets: [
-        'Unlimited voice calling',
-        'Mobile data via ARRA WiFi',
-        'TrendPlay OTT access on mobile'
+        'TPDC for local content creators',
+        'Multi-platform reach (mobile, broadband, OTT)',
+        'Scalable services for small and mid-size businesses'
       ]
     }
   ];

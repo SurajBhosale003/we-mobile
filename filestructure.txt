@@ -21,7 +21,6 @@
         |-- Header
             |-- Header.css
             |-- Header.jsx
-            |-- Untitled-1
         |-- IconBoxButtons
             |-- ActionButton.module.css
             |-- ActionButtons.jsx

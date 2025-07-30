@@ -10,7 +10,7 @@ const services = [
   {
     id: 1,
     title: 'Quadplay',
-    description: 'Welcome to our quad play-your all-in-one digital powerhouse, seamlessly integrating the future of media, connectivity, and communication.',
+    description: 'Experience our all-in-one digital powerhouse integrating media, connectivity, and communication.',
     img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1753785481/dexciss%20site/udemba/quadplay_spigqm.svg',
     dialogComponent: 'quadplay'
   },
@@ -24,14 +24,14 @@ const services = [
   {
     id: 3,
     title: 'E-learning',
-    description: 'Register to be part of our business empowering strategy and become financial free',
+    description: 'Empowering students with smart education tools.',
     img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1753785486/dexciss%20site/udemba/elearning_yogn08.svg',
     dialogComponent: 'e-learning'
   },
   {
     id: 4,
     title: 'WeSat',
-    description: 'Sustain physical, mental, and emotional well-being with digital health tools and expert support.',
+    description: 'Satellite precision, limitless reach. WeSat delivers reliable, high-speed connectivity - whether in the city or at the edge of the map.',
     img: 'https://res.cloudinary.com/de6u5kbiw/image/upload/v1753785493/dexciss%20site/udemba/wesat_cpwf4n.svg',
     dialogComponent: 'we-sat'
   },
@@ -41,7 +41,7 @@ const ValueAddedServices = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transition, setTransition] = useState(true);
   const [activeDialog, setActiveDialog] = useState(null);
-  const cardsToShow = 3;
+  const cardsToShow = 3.5;
 
   // Clone items for infinite loop
   const extendedServices = [...services, ...services, ...services];

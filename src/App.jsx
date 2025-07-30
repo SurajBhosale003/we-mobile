@@ -16,8 +16,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App bg-white custom-scrollbar">
+    <>
       <Header />
+    <div className="App bg-white custom-scrollbar">
 
       {/* Home Section */}
       <section id="home">
@@ -63,6 +64,7 @@ function App() {
         <Footer />
       </section>
     </div>
+    </>
   );
 }
 

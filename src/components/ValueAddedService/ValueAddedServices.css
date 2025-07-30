@@ -1,6 +1,6 @@
 /* ValueAddedServices.css */
 .vas-wrapper {
-    min-height: 100vh;
+  
   padding: 80px 40px;
   text-align: center;
   overflow: hidden;
@@ -48,8 +48,8 @@
   background: white;
   border-radius: 14px;
   padding: 24px;
-  width: calc((100% / 3) - 40px);
-  min-width: calc((100% / 3) - 30px);
+  width: calc((100% / 3.5) - 40px);
+  min-width: calc((100% / 3.5) - 30px);
   height: 350px; /* Fixed height */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   text-align: center;

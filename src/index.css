@@ -27,8 +27,9 @@ html, body, * {
   scrollbar-width: thin;
   scrollbar-color: #ef4444 #f1f1f1;
 }
-body, html, .App {
+.App {
   overflow-x: hidden;
+
 }
 
 /* src/index.css */
