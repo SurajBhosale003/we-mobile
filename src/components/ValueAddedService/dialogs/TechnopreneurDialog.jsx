@@ -94,7 +94,7 @@ const FormField = styled(TextField)({
 
 const TechnopreneurDialog = ({ open, onClose }) => {
   const [formVisible, setFormVisible] = useState(false);
-
+  const [selected, setSelected] = useState(null);
   return (
     <StyledDialog open={open} onClose={onClose}>
       <DialogTitle
@@ -171,12 +171,39 @@ const TechnopreneurDialog = ({ open, onClose }) => {
               <FormField fullWidth label="State" variant="outlined" size="small" />
             </div>
             <div>
-              <p style={{ margin: '8px 0', color: '#e4002b' }}>Have you been convicted before?</p>
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                <FormField label="Yes" variant="outlined" size="small" />
-                <FormField label="No" variant="outlined" size="small" />
-              </div>
-            </div>
+      <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+      <p style={{ margin: '8px 0', color: '#e4002b' }}>Have you been convicted before?</p>
+        {/* Yes Option */}
+        <article
+          className="yn-checkbox-container"
+          onClick={() => setSelected('yes')}
+        >
+          <label className="yn-checkbox">
+            <input
+              type="checkbox"
+              checked={selected === 'yes'}
+              onChange={() => setSelected('yes')}
+            />
+          </label>
+          <label>Yes</label>
+        </article>
+
+        {/* No Option */}
+        <article
+          className="yn-checkbox-container"
+          onClick={() => setSelected('no')}
+        >
+          <label className="yn-checkbox">
+            <input
+              type="checkbox"
+              checked={selected === 'no'}
+              onChange={() => setSelected('no')}
+            />
+          </label>
+          <label>No</label>
+        </article>
+      </div>
+    </div>
             <FormField fullWidth label="Address" variant="outlined" multiline rows={3} size="small" />
             <FormField fullWidth label="Email" variant="outlined" size="small" />
             <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
