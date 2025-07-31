@@ -60,3 +60,5 @@
 |-- tailwind.config.js
 |-- tree
 |-- vite.config.js
+|-- wemobile_ci_key
+|-- wemobile_ci_key.pub

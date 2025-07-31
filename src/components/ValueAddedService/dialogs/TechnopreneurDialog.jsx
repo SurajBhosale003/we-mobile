@@ -159,7 +159,7 @@ const TechnopreneurDialog = ({ open, onClose }) => {
           <h2 style={{ color: '#e4002b', textDecoration: 'underline', marginBottom: 24 }}>Register</h2>
           <form>
             <FormField fullWidth label="Full Name" variant="outlined" size="small" />
-            <FormField fullWidth label="Sex" variant="outlined" size="small" />
+            <FormField fullWidth label="Gender" variant="outlined" size="small" />
             <div style={{ display: 'flex', gap: '12px' }}>
               <FormField label="Date" variant="outlined" size="small" fullWidth />
               <FormField label="Month" variant="outlined" size="small" fullWidth />
