@@ -206,9 +206,7 @@ body {
   z-index: 10;
 }
 /* MUI label override */
-label.MuiFormLabel-root {
-  color: #EE1C25 !important;
-}
+
 /* checkbox  */
 .yn-checkbox-container {
   display: flex;

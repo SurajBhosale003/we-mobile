@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+wemobile_ci_key
+wemobile_ci_key.pub

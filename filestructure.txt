@@ -1,5 +1,6 @@
 |-- .gitignore
 |-- README.md
+|-- cookies.txt
 |-- eslint.config.js
 |-- index.html
 |-- package-lock.json
