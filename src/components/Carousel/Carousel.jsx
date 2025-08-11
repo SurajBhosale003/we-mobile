@@ -9,7 +9,7 @@ const Carousel = () => {
 
   const slides = [
     { id: 1, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1753790355/dexciss%20site/udemba/Always_Connected_Always_Human_7_1_zszrbk.png", alt: "Slide 1" },
-    { id: 2, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1753789897/dexciss%20site/udemba/Always_Connected_Always_Human_6_1_j7rlfr.png", alt: "Slide 2" },
+    { id: 2, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1754908791/dexciss%20site/udemba/Always_Connected_Always_Human_8_wryomj.png", alt: "Slide 2" },
     { id: 3, src: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1753790273/dexciss%20site/udemba/Always_Connected_Always_Human_5_cuqpa4.png", alt: "Slide 3" }
   ];
 
