@@ -47,7 +47,7 @@ function WeMobileImpact() {
         <div className="impact-card" data-animation="from-top">
           <h3>4‑in‑1</h3>
           <p className="title">Complete Quadplay Access</p>
-          <p className="desc">Data, Voice, IPTV, and Home Phone — all in one smart, affordable plan.</p>
+          <p className="desc">Data, Mobile Voice, IPTV, and Home Phone — all in one smart, affordable plan.</p>
         </div>
 
         {/* Card 3 - light by default, turns red on hover */}
